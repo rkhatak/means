@@ -1,20 +1,67 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div class="shell">
+	
+	<!-- Header -->	
+	<div id="header">
+		<h1 id="logo"><a href="#">shoparound</a></h1>	
+		
+		<!-- Cart -->
+		<div id="cart">
+			<a href="javascript:void(0)" (click)="viewCart()" class="cart-link">Your Shopping Cart</a>
+			<div class="cl">&nbsp;</div>
+			<span>Cart: <strong>{{cartCount}}</strong></span>
+			&nbsp;&nbsp;
+			<span>Total cart value: <strong>${{cartPrice}}</strong></span>
+		</div>
+		<!-- End Cart -->
+		
+		
+	</div>
+	<!-- End Header -->
+	
+	<!-- Main -->
+	<div id="main">
+		<div class="cl">&nbsp;</div>
+		
+		<!-- Content -->
+		<div id="content">
+			
+			
+			
+			<!-- Products -->
+			<div class="products">
+				<div class="cl">&nbsp;</div>
+				<ul *ngIf="allRecord; else noproduct">
+				    <li *ngFor="let product of allRecord">
+				    	<a href="#"><img src="assets/css/images/big1.jpg" alt="" /></a>
+				    	<div class="product-info">
+				    		
+				    		<div class="product-desc">
+								<h4>{{product.name}}</h4>
+				    			 <strong class="price">${{product.price}}</strong>
+                         <input type="button" value="BUY" class="r_buy_button" (click)="addToCart($event,product)">
+				    		</div>
+				    	</div>
+			    	</li>
+			    
+			    
+            </ul>
+            <ng-template #noproduct>
+               <div>No product available</div>
+            </ng-template>
+            
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Products -->
+			
+		</div>
+		<!-- End Content -->
+		
+		
+		
+		<div class="cl">&nbsp;</div>
+	</div>
+	<!-- End Main -->
+	
+	
+</div>	
+<app-dialog (uploaded)="updateRecord($event)"></app-dialog>

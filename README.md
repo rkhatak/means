@@ -1,3 +1,11 @@
+To run project run below command
+
+ http-server ./dist
+
+once run some ip urls is showing please copy one of them run on browser
+
+
+
 # Means
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
