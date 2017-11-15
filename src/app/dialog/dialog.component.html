@@ -1,0 +1,38 @@
+<div class="a_modal hide">
+  <div class="a_modal-dialog">
+    <a href="javascript:void(0)" class="i_close close" (click)="closeDialog()">+</a>
+    <div class="cl">&nbsp;</div>
+    <div class="cl">&nbsp;</div>
+    <div class="cl">&nbsp;</div>
+    <div class="products">
+      <div class="cl">&nbsp;</div>
+      <ul *ngIf="allRecord; else noproduct">
+          <li class="r_dialog" *ngFor="let product of allRecord">
+             <div>
+                <div style="float:left;width:40%"><a href="#"><img src="assets/css/images/big1.jpg" alt="" style="width:100px;height:100px" /></a></div>
+                <div style="float:left;width:40%">
+                     
+                    
+                       <h4>{{product.name}}</h4>
+                         <strong class="price">${{product.price}}</strong>
+                   
+               </div>
+               <div style="float:left">
+                     <a href="javascript:void(0)" (click)="deleteProduct(product)">Delete product</a>
+                   
+               </div>
+             </div>
+             
+             
+          </li>
+         
+       
+      </ul>
+      <ng-template #noproduct>
+         <div>No product available</div>
+      </ng-template>
+      
+      <div class="cl">&nbsp;</div>
+   </div>
+  </div>
+</div>
