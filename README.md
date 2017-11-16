@@ -2,6 +2,7 @@ Requirement to run this project given below:-
 
 -You should have node install in your system
 -You should have mongoDB install in your system
+-You should have Angular CLI install in your system
 
 To run project run below command
 
