@@ -59,6 +59,7 @@ export class AppComponent {
    let totalPrice=0;
    this.service.updateCartProducts().subscribe((data) => {
       this.cartCount=data.data.length;
+
       //alert(this.cartCount);
       if(data.data.length>0){
          let cartProduct=data.data;
@@ -69,6 +70,7 @@ export class AppComponent {
          
       }
       this.cartPrice=totalPrice;
+      this.changeDetectorRef.detectChanges();
     });
   }
 
@@ -93,6 +95,6 @@ export class AppComponent {
       this.allRecord="";
     })
     this.updateCart();
-    this.changeDetectorRef.detectChanges();
+    
   }
 }
