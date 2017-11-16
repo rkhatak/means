@@ -54,10 +54,14 @@ export class DialogComponent implements OnInit, OnDestroy {
     });
   }
   deleteProduct(product){
+   let that=this;  
    this.productUpdate=false;  
    this.pId=product._id;
    this.updateProductList();
-   this.uploaded.emit('complete');
+   setTimeout(function(){
+      that.uploaded.emit('complete');
+   },1000);
+   
   }
 
 }
