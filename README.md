@@ -6,10 +6,15 @@ Requirement to run this project given below:-
 
 To run project run below command
 
- http-server ./dist
+-http-server ./dist
 
 once run some ip urls is showing please copy one of them run on browser
 
 To run node server please run below command 
 
-node server.js
+-node server.js
+
+DBName : shoppingcart
+Collection name : product
+
+DB file is in the root folder to import DB
